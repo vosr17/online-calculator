@@ -19,16 +19,17 @@ def take_inputs():
     except ValueError:
         return "B's value should be a number (which includes fraction, float, integer). \n"
     return v1, v2
+
 @app.route('/')
 def index():
     return 'Usage;\n<Operation>?A=<Value1>&B=<Value2>\n'
 
 
-@app.route('/sub')
-def substraction():
+@app.route('/mul')
+def multiplication():
     try:
         v1, v2 = take_inputs()
-        result = v1 - v2
+        result = v1 * v2
     except ValueError:
         warning_msg = take_inputs()
         return warning_msg
@@ -37,7 +38,6 @@ def substraction():
             result = int(result)
             return '%d \n' % result
         return ('%.14f' % result).rstrip('0').rstrip('.')
-
 
 if __name__ == "__main__":
     app.run()
