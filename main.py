@@ -22,7 +22,22 @@ def take_inputs():
 
 @app.route('/')
 def index():
-    return 'Usage;\n<Operation>?A=<V1>&B=<V2>\n'
+    return 'Usage;\n<Operation>?A=<Value1>&B=<Value2>\n'
+
+
+@app.route('/sub')
+def substraction():
+    try:
+        v1, v2 = take_inputs()
+        result = v1 - v2
+    except ValueError:
+        warning_msg = take_inputs()
+        return warning_msg
+    else:
+        if float(result).is_integer():
+            result = int(result)
+            return '%d \n' % result
+        return ('%.14f' % result).rstrip('0').rstrip('.') 
 
 
 @app.route('/add')
@@ -37,7 +52,8 @@ def addition():
         if float(result).is_integer():
             result = int(result)
             return '%d \n' % result
-        return ('%.14f' % result).rstrip('0').rstrip('.') 
+        return ('%.14f' % result).rstrip('0').rstrip('.')
+        
      
 
 
