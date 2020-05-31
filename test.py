@@ -1,6 +1,7 @@
 from main import substraction
 from main import addition
 from main import multiplication
+from main import division
 
 import main
 import unittest
