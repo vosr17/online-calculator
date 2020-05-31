@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from main import substraction
 from main import addition
 from main import multiplication
@@ -135,24 +134,6 @@ class TestOnlineCalculator(unittest.TestCase):
         self.assertEqual(b"B's denominator should not be zero! \n", response_data.data)
 
 
-
-if __name__ == '__main__':
-  unittest.main()
-=======
-from main import division
-import main
-import unittest
-
-
-class TestOnlineCalculator(unittest.TestCase):
-    
-    """Testing features of division in online calculator"""
-
-    def setUp(self):
-        """Sets up the app for testing"""
-        main.app.testing = True
-        self.app = main.app.test_client()
-
     def test_division(self):
         """Tests page with /div route, testing division feature of the calculator,
         right now all types of numbers being tested"""
@@ -200,4 +181,3 @@ class TestOnlineCalculator(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
->>>>>>> division
