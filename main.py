@@ -68,6 +68,20 @@ def multiplication():
             result = int(result)
             return '%d \n' % result
         return ('%.14f' % result).rstrip('0').rstrip('.')
+
+@app.route('/div')
+def division():
+    try:
+        v1, v2 = take_inputs()
+        result = v1 / v2
+    except ValueError:
+        warning_msg = take_inputs()
+        return warning_msg
+    else:
+        if float(result).is_integer():
+            result = int(result)
+            return '%d \n' % result
+        return ('%.14f' % result).rstrip('0').rstrip('.')
         
      
 
