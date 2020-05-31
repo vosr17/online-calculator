@@ -25,11 +25,11 @@ def index():
     return 'Usage;\n<Operation>?A=<Value1>&B=<Value2>\n'
 
 
-@app.route('/mul')
-def multiplication():
+@app.route('/div')
+def division():
     try:
         v1, v2 = take_inputs()
-        result = v1 * v2
+        result = v1 / v2
     except ValueError:
         warning_msg = take_inputs()
         return warning_msg
